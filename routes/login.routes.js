@@ -8,9 +8,11 @@ const {Router} = require ('express');
 const router = Router();
 
 
-router.get('/', (request, response) => {
-    console.log("Get al raíz");
-    response.send("Enviando");
-});
+//destructurar loginShow para pedirle renderLogin creado en el login.controller (loginShow.renderLogin)
+const {renderLogin} = require('../controller/login.controller')
+
+//lamamos al controlador con router.get, le decimos q vaya a la raiz '/' y llame a renderLogin
+router.get('/', renderLogin);
+
 
 module.exports = router;
