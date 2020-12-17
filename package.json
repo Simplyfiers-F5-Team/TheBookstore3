@@ -1,0 +1,24 @@
+{
+  "name": "thebookstore3",
+  "version": "1.0.0",
+  "description": "Proyecto 3 Librería",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Simplyfiers-F5-Team/TheBookstore3.git"
+  },
+  "author": "Simplifyers",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Simplyfiers-F5-Team/TheBookstore3/issues"
+  },
+  "homepage": "https://github.com/Simplyfiers-F5-Team/TheBookstore3#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "mongoose": "^5.11.8"
+  }
+}
