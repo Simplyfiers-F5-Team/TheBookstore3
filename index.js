@@ -1,6 +1,8 @@
 const express = require('express');
+const configuration = require('./configuration/develop.json');
+
 const app = express();
-const port = 3002;
+const port = configuration.server.port;
 
 app.listen(port, () => {
     console.log(`${port} express escuchando`);
