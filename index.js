@@ -1,16 +1,21 @@
-'use strict'
+'use strict';
 
-const express = require('express');
+const app = require('express')();
 
-const router = require('./routes/login.routes.js')
 const configuration = require('./configuration/develop.json');
+const loginRouter = require('./routes/loginRoutes.js');
 
-const app = express();
-const port = configuration.server.port;
 
-app.use(router);
-
-app.listen(port, () => {
-    console.log(`${port} express escuchando`);
-});
-
+(async () => {
+	const port = configuration.server.port;
+	try {
+		await app
+			.use(loginRouter)
+			.listen(port)
+			;
+		console.log(`Server listening art 'http://localhost:${port}`);
+	}
+	catch (error) {
+		console.error(error.message);
+	}
+})();
