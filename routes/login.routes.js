@@ -11,6 +11,7 @@ const router = Router();
 //destructurar loginShow para pedirle renderLogin creado en el login.controller (loginShow.renderLogin)
 const loginController = require('../controller/login.controller')
 
+
 //lamamos al controlador con router.get, le decimos q vaya a la raiz '/' y llame a muestraRegistro
 router.get('/login', loginController.muestraRegistro);
 
