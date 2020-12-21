@@ -1,0 +1,15 @@
+<form 
+		aria-label="Login form"
+		method="POST" 
+		action="/login">
+	<input 
+		type="text" 
+		aria-label="user name" 
+		name="userName"
+		autofocus
+		placeholder="Username"
+		autocomplete="off"
+		{{#if isError}}class="error"{{/if}}>
+	<button 
+		type="submit">Login</button>
+</form>

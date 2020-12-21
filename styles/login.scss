@@ -1,0 +1,12 @@
+@use '_global';
+@use 'o-login';
+
+body {
+	// @extend %base-color;
+	background-image: url('/img/background_library.jpeg');
+	background-size: cover;
+	background-blend-mode: overlay;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

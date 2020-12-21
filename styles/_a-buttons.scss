@@ -1,0 +1,30 @@
+@use '_global';
+@use "sass:color";
+
+
+@mixin action($color) 
+{
+	padding: 2ex 4ex;
+	border-radius: 2px;
+	background-color: $color;
+	
+	font-weight: bold;
+	text-transform: uppercase;
+	
+	@include global.shadow(1);
+	transition: box-shadow ease-in-out 0.2s;
+	
+	&:hover{
+		// background-color: color.scale(global.$accent-color, $alpha: 30%);
+		@include global.shadow(2);
+	}
+	
+	&:focus {
+		background-color: color.scale($color, $alpha: 30%);
+		outline: 2px solid $color;
+	}
+	
+	&:active {
+		@include global.shadow(1);
+	}
+}

@@ -1,0 +1,27 @@
+@use '_global';
+@use 'm-loginForm';
+
+main {
+	border-radius: 2px;
+	width: 30rem;
+	max-width: 90vw;
+	height: 20rem;
+	// background-color: global.$background-color;
+	@extend %acrylic;
+	@include global.shadow(5);
+	display: flex;
+	flex-flow: column;
+	margin-bottom: calc( (100vh - 20rem) * 0.3 );
+	h1 {
+		padding:0.5em;
+		text-transform: uppercase;
+		text-align: center;
+		font-size: 2rem;
+		font-family: 'Roboto Slab', serif;
+		background-color: global.$primary-color;
+		border-bottom: 1px solid #0002;
+		border-left: 3rem solid transparent;
+		border-right: 3rem solid transparent;
+	}
+}
+
