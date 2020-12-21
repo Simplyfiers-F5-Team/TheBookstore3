@@ -12,7 +12,7 @@
 
 const loginController = {
 	muestraRegistro: (request, response) => {
-		response.send('Render login en el controlador con GET');
+		response.render('loginView', {layout:'loginLayout'}); //ponemos loginLayout porque por defecto va a main
 	},
 	ejecutaRegistro: (request, response) => { 
 		response.send('Do login en el controlador con POST');
