@@ -14,7 +14,7 @@ const loginController = {
 	muestraRegistro: (request, response) => {
 		response.render('loginView', {layout:'loginLayout'}); //ponemos loginLayout porque por defecto va a main
 	},
-	ejecutaRegistro: (request, response) => { 
+	ejecutaRegistro: (request, response) => {
 		response.send('Do login en el controlador con POST');
 	}
 }
