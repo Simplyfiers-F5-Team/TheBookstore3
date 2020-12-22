@@ -14,7 +14,7 @@ const userModel = require('../models/user');
 
 const loginController = {
 	muestraRegistro: (request, response) => {
-		response.render('loginView', {layout:'loginLayout'}); //ponemos loginLayout porque por defecto va a main
+		response.render('loginView', {layout:'loginLayout', loginInvalid: false}); //ponemos loginLayout porque por defecto va a main
 	},
 	ejecutaRegistro: async (request, response) => {
 		const username = request.body.username;
@@ -26,7 +26,7 @@ const loginController = {
 		} else {
 			//Si el usuario que le metemos no esta en la bbdd, nos redirige a loginView, hay que recordar poner que vaya al layout (loginLayout)
 			//porque por defecto te llevario a main.hbs
-			response.render('loginView', {layout:'loginLayout'});
+			response.render('loginView', {layout:'loginLayout', loginInvalid: true});
 		}
 	}
 };

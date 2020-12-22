@@ -1,7 +1,11 @@
 {{!-- name: lo que se le va a mandar al controlador --}}
 
 <form action="/login" method="POST">
-<label for="">Login</label>
-<input type="text" name="username">
-<button type="submit">Login</button>
+    <label for="">Login</label>
+    <input type="text" name="username">
+    <button type="submit">Login</button>
 </form>
+
+{{#if loginInvalid}}
+    <h2>Usuario incorrecto</h2>
+{{/if}}
