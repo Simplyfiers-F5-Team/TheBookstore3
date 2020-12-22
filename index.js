@@ -2,9 +2,21 @@
 
 const express = require('express');
 const exphbs  = require('express-handlebars');
+const mongoose = require ('mongoose');
 
 const router = require('./routes/login.routes.js')
 const configuration = require('./configuration/develop.json');
+
+//conectamos la DB a esa dirección
+mongoose.connect("mongodb://localhost:27017/TheBookstore", {
+    useUnifiedTopology: true, 
+    useNewUrlParser: true,
+});
+
+//especificamos el mensaje que queremos que salga cuando se conecte
+mongoose.connection.on("open", () => {
+    console.log(`mongoDB conectado`);
+});
 
 const app = express();
 const port = configuration.server.port;
