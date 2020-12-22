@@ -4,13 +4,17 @@ const { Schema, model } = require(`mongoose`);
 /* require : true para que sea obligatorio escribir el nombre de usuario */
 /* timestamp añade el día de hora de creación del usuario y la fecha de la última actualización */
 
-const UserSchema = new Schema({
-    userName: {
-        type: String,
-        unique: true,
-        require: true
+const UserSchema = new Schema(
+    {
+        userName: {
+            type: String,
+            unique: true,
+            require: true
+        }
     },
-    timestamps: true
-});
+    {
+        timestamps: true
+    }
+);
 
 module.exports = model('User', UserSchema);
