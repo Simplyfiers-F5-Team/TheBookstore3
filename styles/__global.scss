@@ -58,12 +58,6 @@ $primary-color: hsla(20, 100%, 60%, 0.6);
 $accent-color: hsla(200,100%,60%,0.6);
 $error-color: hsla(0,100%,60%,0.6);
 
-@function focusColor() {
-	@media (prefers-color-scheme: dark) {
-		$colorcico : #000;
-	}
-	@return $colorcico;
-}
 
 %acrylic {
 	backdrop-filter: blur(10px);
