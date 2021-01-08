@@ -13,7 +13,9 @@ router.post('/books/createBook', bookController.crearNuevoLibro);
 router.get('/books', bookController.muestraLibros);
 
 /* UPDATE BOOK */
-
+router.get('/books/edit/:id', bookController.actualizarFormularioLibro);
+router.put('/books/edit/:id', bookController.actualizarLibro);
 /* DELETE BOOK */
+router.delete('/books/delete/:id', bookController.eliminarLibro);
 
 module.exports = router;

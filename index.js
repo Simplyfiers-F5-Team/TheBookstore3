@@ -3,6 +3,7 @@
 const express = require('express');
 const exphbs  = require('express-handlebars');
 const mongoose = require ('mongoose');
+const methodOverride = require('method-override');
 
 const loginrouter = require('./routes/login.routes.js')
 const bookrouter = require('./routes/book.routes.js')
@@ -12,7 +13,8 @@ const configuration = require('./configuration/develop.json');
 mongoose.connect("mongodb://localhost:27017/TheBookstore", {
     useUnifiedTopology: true, 
     useNewUrlParser: true,
-    useCreateIndex: true
+    useCreateIndex: true,
+    useFindAndModify: false
 });
 
 //especificamos el mensaje que queremos que salga cuando se conecte
@@ -27,9 +29,9 @@ const port = configuration.server.port;
 //express.json y urlencoded tiene que ir antes de las rutas
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
+app.use(methodOverride('_method'));
 app.use(loginrouter);
 app.use(bookrouter);
-
 
 app.engine('hbs', exphbs({
     defaultLayout: 'loginLayout',

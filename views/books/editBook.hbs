@@ -1,0 +1,20 @@
+<h1>Editar nuevo libro</h1>
+
+<form action="/books/edit/{{book._id}}?_method=PUT" method="POST" class="crearLibro">
+
+    <input type="hidden" name="_method" value="PUT">
+    <input type="text" name="title" placeholder="Título" value="{{book.title}}" autofocus>
+    <input type="text" name="description" placeholder="Descripción" value="{{book.description}}">
+    <select name="category" value="{{book.category}}">
+        <option disabled>Selecciona categoria</option>
+        <option value="Ciencia_Ficción">Ciencia Ficción</option>
+        <option value="Terror">Terror</option>
+        <option value="Épica">Épica</option>
+        <option value="Manual">Manual</option>
+    </select>
+    <input type="number" name="stock" placeholder="Stock" value="{{book.stock}}">
+    <input type="text" name="price" placeholder="Precio" value="{{book.price}}">
+
+    <button type="submit">Guardar libro</button>
+
+</form>
