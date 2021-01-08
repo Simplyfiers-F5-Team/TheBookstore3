@@ -4,7 +4,8 @@ const express = require('express');
 const exphbs  = require('express-handlebars');
 const mongoose = require ('mongoose');
 
-const router = require('./routes/login.routes.js')
+const loginrouter = require('./routes/login.routes.js')
+const bookrouter = require('./routes/book.routes.js')
 const configuration = require('./configuration/develop.json');
 
 //conectamos la DB a esa dirección
@@ -26,9 +27,12 @@ const port = configuration.server.port;
 //express.json y urlencoded tiene que ir antes de las rutas
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
-app.use(router);
+app.use(loginrouter);
+app.use(bookrouter);
+
 
 app.engine('hbs', exphbs({
+    defaultLayout: 'loginLayout',
     extname: '.hbs'
 }));
 app.set('view engine', 'hbs');

@@ -26,9 +26,11 @@ const BookSchema = new Schema({ /* estamos creando los datos de cada libro (camp
         require: true,
         default: 0,
         min: 0,
-    },
-    /* TODO: opción de añadir imagen | min y max size */
-    timestamps: true
-});
+    }
+    
+},{
+        /* TODO: opción de añadir imagen | min y max size */
+        timestamps: true
+    });
 
 module.exports = model('Book', BookSchema);

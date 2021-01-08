@@ -1,11 +1,10 @@
 'use strict'
 
-const book = require('../models/book');
-const bookModel = require('../models/book');
+const Book = require('../models/book');
 
 const bookController = {
     formularioCrearLibro: (request, response) => {
-        response.render('/books/createBook')
+        response.render('books/createBook')
     },
     crearNuevoLibro: async (request, response) => {
         const {title, description, category, price, stock} = request.body;
@@ -15,7 +14,7 @@ const bookController = {
     },
     
     muestraLibros: (request, response) => {
-        response.render('/books/allBooks')
+        response.render('books/allBooks')
     }
 
 }
