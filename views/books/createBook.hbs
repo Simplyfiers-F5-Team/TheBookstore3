@@ -1,11 +1,15 @@
-
 <h1>Crear nuevo libro</h1>
 
 <form action="/books/createBook" method="POST" class="crearLibro">
 
     <input type="text" name="title" placeholder="Título" autofocus>
     <input type="text" name="description" placeholder="Descripción">
-    <input type="text" name="category" placeholder="Categoría">
+    <select name="category">
+        <option value="Ciencia_Ficción">Ciencia Ficción</option>
+        <option value="Terror">Terror</option>
+        <option value="Épica">Épica</option>
+        <option value="Manual">Manual</option>
+    </select>
     <input type="number" name="stock" placeholder="Stock">
     <input type="text" name="price" placeholder="Precio">
 
