@@ -13,11 +13,10 @@ const loginController = require('../controller/login.controller')
 
 
 //lamamos al controlador con router.get, le decimos q vaya a la raiz '/' y llame a muestraRegistro
-router.get('/login', loginController.muestraRegistro);
+router.get('/', loginController.muestraRegistro);
 
 //Asociamos la url login con el metodo ejecutaRegistro
 router.post('/login', loginController.ejecutaRegistro);
-
 
 
 module.exports = router;

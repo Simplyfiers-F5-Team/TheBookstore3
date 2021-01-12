@@ -34,13 +34,15 @@ app.use(loginrouter);
 app.use(bookrouter);
 
 app.engine('hbs', exphbs({
-    defaultLayout: 'loginLayout',
+    defaultLayout: 'mainLayout',
+    partialsDir: __dirname + '/views/partials/',
+    layoutsDir: __dirname + '/views/layouts/',
     extname: '.hbs'
 }));
 
 app.set('view engine', 'hbs');
 
-app.use(express.static('public'));
+app.use(express.static(__dirname + '/public'));
 
 app.listen(port, () => {
     console.log(`${port} express escuchando`);
