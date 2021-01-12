@@ -1,11 +1,18 @@
 {{!-- name: lo que se le va a mandar al controlador --}}
+<header class="login-header">
+    <figure>
+        <img src="img/library-logo.png" alt="Imagen logotipo de la libreria">
+    </figure>
+</header>
 
-<form action="/login" method="POST">
-    <label for="">Login</label>
-    <input type="text" name="username">
-    <button type="submit">Login</button>
-</form>
+<main class="login-main">
+    <form class="login-form" action="/login" method="POST">
+        <label for="login"></label>
+        <input type="text" name="username">
+        <button type="submit">Login</button>
+    </form>
 
-{{#if loginInvalid}}
-    <h2>Usuario incorrecto</h2>
-{{/if}}
+    {{#if loginInvalid}}
+        <h2>Usuario incorrecto</h2>
+    {{/if}}
+</main>

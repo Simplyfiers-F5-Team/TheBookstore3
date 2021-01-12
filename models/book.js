@@ -10,6 +10,9 @@ const BookSchema = new Schema({ /* estamos creando los datos de cada libro (camp
         require: false,
         unique: false
     },
+    cover: {
+        type: String,
+    },
     category: {
         type: String,
         enum: ['Ciencia Ficción', 'Terror', 'Épica', 'Manual'],

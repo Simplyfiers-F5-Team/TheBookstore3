@@ -4,17 +4,20 @@
     {{#each libro}} 
 
         <li>
+            <dd><img src="{{cover}}" alt="{{title}}"></dd>
             <dt>Título:</dt> <dd>{{title}}</dd>
             <dt>Descripción:</dt> <dd>{{description}}</dd>
             <dt>Categoría:</dt> <dd>{{category}}</dd>
             <dt>Stock:</dt> <dd>{{stock}}</dd>
             <dt>Precio:</dt> <dd>{{price}} €</dd>
+            
             <form action="/books/delete/{{_id}}?_method=DELETE" method="POST">
-            <input type="hidden" name="_method" value="DELETE">
-            <button type="submit">DELETE</button>
-            <a href="/books/edit/{{_id}}">EDIT</a>
+                <input type="hidden" name="_method" value="DELETE">
+                <button type="submit">DELETE</button>
+                <a href="/books/edit/{{_id}}">EDIT</a>
             </form>
         </li>
         
     {{/each}}
 </ul>
+
