@@ -4,9 +4,8 @@ const express = require('express');
 const exphbs  = require('express-handlebars');
 const mongoose = require ('mongoose');
 const methodOverride = require('method-override');
+const morgan = require('morgan');
 
-const loginrouter = require('./routes/login.routes.js')
-const bookrouter = require('./routes/book.routes.js')
 const configuration = require('./configuration/develop.json');
 
 //conectamos la DB a esa dirección
@@ -30,8 +29,9 @@ const port = configuration.server.port;
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 app.use(methodOverride('_method'));
-app.use(loginrouter);
-app.use(bookrouter);
+app.use(require('./routes/login.routes'));
+app.use(require('./routes/book.routes'));
+app.use(morgan('dev'));
 
 app.engine('hbs', exphbs({
     defaultLayout: 'mainLayout',

@@ -14,7 +14,7 @@ const bookController = {
     },
     
     muestraLibros: async (request, response) => {
-        const libro = await Book.find().lean();
+        const libro = await Book.find().sort({createdAt:'desc'}).lean();
         response.render('books/allBooks', { libro });
     },
 
