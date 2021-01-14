@@ -1,7 +1,5 @@
 'use strict'
 
-const { request, response } = require('express');
-const { findById } = require('../models/book');
 const Book = require('../models/book');
 
 const bookController = {
@@ -9,8 +7,8 @@ const bookController = {
         response.render('books/createBook')
     },
     crearNuevoLibro: async (request, response) => {
-        const {title, description, category, price, stock} = request.body;
-        const newBook = new Book ({title, description, category, price, stock});
+        const {title, description, category,cover, price, stock} = request.body;
+        const newBook = new Book ({title, description, category, cover, price, stock});
         await newBook.save();
         response.redirect('/books');
     },
@@ -26,15 +24,21 @@ const bookController = {
     },
 
     actualizarLibro: async (request, response) => {
-        const {title, description, category, price, stock} = request.body;
-        await Book.findByIdAndUpdate(request.params.id, {title, description, category, price, stock}),
+        const {title, description, category, cover, price, stock} = request.body;
+        await Book.findByIdAndUpdate(request.params.id, {title, description, category, cover, price, stock}),
         response.redirect('/books');
     },
 
     eliminarLibro: async (request, response) => {
         await Book.findByIdAndDelete(request.params.id)
         response.redirect('/books');
+    },
+    // BARRA DE BUSQUEDA FUNCIONAL!!!
+    buscarLibro : async (request,response) => {
+        const busqueda = await Book.find({$text: { $search: request.body.search, $caseSensitive: false }}).lean();
+        response.render('books/allBooks',{libro: busqueda});
     }
+
 };
 
 module.exports = bookController;

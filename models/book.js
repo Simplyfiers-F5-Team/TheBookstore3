@@ -35,5 +35,7 @@ const BookSchema = new Schema({ /* estamos creando los datos de cada libro (camp
         /* TODO: opción de añadir imagen | min y max size */
         timestamps: true
     });
+    
+BookSchema.index({title:"text"});
 
 module.exports = model('Book', BookSchema);

@@ -17,5 +17,7 @@ router.get('/books/edit/:id', bookController.actualizarFormularioLibro);
 router.put('/books/edit/:id', bookController.actualizarLibro);
 /* DELETE BOOK */
 router.delete('/books/delete/:id', bookController.eliminarLibro);
+// SEARCH BOOK
+router.post('/search', bookController.buscarLibro);
 
 module.exports = router;

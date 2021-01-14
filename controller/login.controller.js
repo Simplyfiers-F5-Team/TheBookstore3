@@ -33,6 +33,3 @@ const loginController = {
 
 //exportamos el login al controlador
 module.exports = loginController;
-
-
-
