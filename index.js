@@ -31,7 +31,7 @@ app.use(express.urlencoded({extended:false}));
 app.use(methodOverride('_method'));
 app.use(require('./routes/login.routes'));
 app.use(require('./routes/book.routes'));
-app.use(morgan('dev'));
+//app.use(morgan('dev'));
 
 app.engine('hbs', exphbs({
     defaultLayout: 'mainLayout',
