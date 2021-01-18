@@ -1,21 +1,23 @@
-<h1>Crear nuevo libro</h1>
+<main class="main-create">
+    <h1>Crear nuevo libro</h1>
 
-<form action="/books/createBook" method="POST" class="form-createBook">
+    <form action="/books/createBook" method="POST" class="form-createBook">
 
-    <input type="text" name="title" placeholder="Título" autofocus>
-    <input type="text" name="cover" placeholder="Imagen del libro...">
-    <textarea name="description" cols="30" rows="10"></textarea>
-    <select name="category">
-        <option disabled>Selecciona categoria</option>
-        <option value="Ciencia_Ficción">Ciencia Ficción</option>
-        <option value="Terror">Terror</option>
-        <option value="Épica">Épica</option>
-        <option value="Manual">Manual</option>
-    </select>
-    <input type="number" name="stock" placeholder="Stock">
-    <input type="text" name="price" placeholder="Precio">
+        <input type="text" name="title" placeholder="Título" autofocus>
+        <textarea name="description" cols="30" rows="10" placeholder="Descripcion..."></textarea>
+        <input type="text" name="cover" placeholder="Imagen del libro...">
+        <select name="category">
+            <option disabled>Selecciona categoria</option>
+            <option value="Ciencia_Ficción">Ciencia Ficción</option>
+            <option value="Terror">Terror</option>
+            <option value="Épica">Épica</option>
+            <option value="Manual">Manual</option>
+        </select>
+        <input type="number" name="stock" placeholder="Stock">
+        <input type="text" name="price" placeholder="Precio">
 
-    <button type="submit">Guardar libro</button>
+        <button type="submit">Guardar libro</button>
 
-</form>
+    </form>
+</main>
 
