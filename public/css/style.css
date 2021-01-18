@@ -172,21 +172,30 @@ main section ul li form a {
 .form-createBook input,
 .form-editBook input {
     border: 1px solid #82D9B6;
+    width: 22vw;
+    margin-top: 9vh;
+    margin: 0.5vw;
+    padding: 1vh;
 }
 
 .form-createBook textarea,
 .form-editBook textarea {
     height: 15vh;
     border: 1px solid #82D9B6;
-    width: 20vw;
+    width: 22vw;
 }
 
 .form-createBook select,
 .form-editBook select {
     border: 1px solid #82D9B6;
+    width: 22vw;
+    margin: 0.5vw;
+    padding: 1vh;
 }
 
 .form-createBook button,
 .form-editBook button {
     background-color: #82D9B6;
+    width: 22vw;
+    margin: 0.5vw;
 }
